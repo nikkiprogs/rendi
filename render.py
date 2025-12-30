@@ -13,7 +13,7 @@ from selenium.common.exceptions import TimeoutException, NoSuchFrameException, W
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
-def open(net, interval = 0):
+def open():
  time.sleep(60)
  options = webdriver.ChromeOptions()
  options.add_argument("--disable-blink-features=AutomationControlled")
@@ -47,3 +47,4 @@ def open(net, interval = 0):
   time.sleep(600)
 
 open()
+
