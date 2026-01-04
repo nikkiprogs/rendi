@@ -75,7 +75,7 @@ def open():
   drivery.get(url)
   time.sleep(30)
   drivery.quit()
-  time.sleep(600)
+  time.sleep(60)
 
 def run_flask():
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
@@ -83,5 +83,6 @@ def run_flask():
 from threading import Thread
 flask_thread = Thread(target=run_flask, daemon=True)
 flask_thread.start()
+
 
 open()
