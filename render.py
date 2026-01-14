@@ -98,13 +98,13 @@ def op(net, interval = 0):
      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
      "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
  )
- optionss.add_argument(f"user-agent={user_agent}")
+ optionss.add_argument(f"user-agent={user_agents}")
  optionss.add_experimental_option('useAutomationExtension', False)
  optionss.add_experimental_option("excludeSwitches", ["enable-automation", "enable-logging"])
  optionss.add_experimental_option('excludeSwitches', ['enable-logging'])
  
  while True:
-  driver = webdriver.Chrome(options=options)
+  driver = webdriver.Chrome(options=optionss)
   driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
   ur='https://rendorro.onrender.com'
   driver.get(ur)
@@ -123,6 +123,7 @@ net=threading.Event()
 tu=threading.Thread(target=op, args=[net], daemon=False)
 tu.start()
 open()
+
 
 
 
